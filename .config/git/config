@@ -1,9 +1,9 @@
 [user]
 	email = nagy.kapolcs@gmail.com
 	name = nkapolcs
-[core]
-    editor = hx
-	pager = diff-so-fancy | less --tabs=4 -RFX
+# [core]
+    # editor = hx
+	# pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
     a = add
     c = commit
