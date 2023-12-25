@@ -95,7 +95,7 @@ else
     BROWSERS="firefox tor-browser"
     EDITORS="vim neovim"
     VCS="git"
-    TOOLS="fzf zoxide direnv"
+    TOOLS="fzf zoxide direnv lsd"
     PYTHON="poetry"
     # MATH="octave"
     # PYTHON="python-dev python3-dev python3-pip ipython3 poetry"

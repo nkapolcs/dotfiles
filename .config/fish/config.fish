@@ -4,6 +4,7 @@
 
 # VARIABLES
 
+set -Ux GIT_SSH_COMMAND "ssh -i ~/.ssh/github"
 set -gx OS (uname -s)
 set -gx DENO_INSTALL $HOME/.deno
 set -gx BUN_INSTALL $HOME/.bun
@@ -109,3 +110,6 @@ end
 
 # opam configuration
 source /Users/khlan/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+
+# git cred
+# ssh-add ~/.ssh/github.pub > /dev/null ^ /dev/null
