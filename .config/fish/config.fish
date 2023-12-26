@@ -4,11 +4,10 @@
 
 # VARIABLES
 
-set -Ux GIT_SSH_COMMAND "ssh -i ~/.ssh/github"
 set -gx OS (uname -s)
 set -gx DENO_INSTALL $HOME/.deno
 set -gx BUN_INSTALL $HOME/.bun
-set -gx PNPM_HOME /Users/khlan/Library/pnpm
+set -gx PNPM_HOME /Users/kkga/Library/pnpm
 set -gx FZF_DEFAULT_COMMAND 'fd --type=file'
 set -gx FZF_DEFAULT_OPTS '--layout=reverse --height=50% --preview-window=bottom:50%,border-top --inline-info --color=prompt:3,header:7,info:7,pointer:14:bold,marker:4,hl:4,hl+:12:,fg+:15,bg+:235'
 set -gx EDITOR hx
@@ -105,11 +104,11 @@ if status --is-interactive
     zoxide init fish --cmd j | source
     direnv hook fish | source
     atuin init fish --disable-up-arrow | source
-    fnm env --use-on-cd --version-file-strategy recursive | source
+    fnm env --use-on-cd | source
 end
 
 # opam configuration
-source /Users/khlan/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source /Users/kkga/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 # git cred
 # ssh-add ~/.ssh/github.pub > /dev/null ^ /dev/null
