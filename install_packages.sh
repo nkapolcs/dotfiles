@@ -109,6 +109,8 @@ else
     cargo install atuin
     cargo install topgrade
     curl -fsSL https://fnm.vercel.app/install | bash
+    curl -sfL https://direnv.net/install.sh | bash
+    # Zellij
 fi
 echo 'Done with OS-specific setup'
 echo
