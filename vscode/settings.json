@@ -4,11 +4,9 @@
 
   // Theme
   "workbench.colorTheme": "GitHub Dark Dimmed",
-  // "workbench.colorTheme": "Aura Dark",
   "workbench.iconTheme": "moxer-icons",
 
   // Change fonts
-  // Change font
   "editor.fontFamily": "JetBrainsMono",
   "scm.inputFontFamily": "Geist Mono",
   "terminal.integrated.fontFamily": "JetBrainsMono",
@@ -30,7 +28,6 @@
   "window.titleBarStyle": "custom",
   "editor.scrollbar.horizontal": "auto",
 
-  // "apc.activityBar": { "position": "bottom" },
   // APC
   "apc.activityBar": {
     "position": "bottom",
@@ -56,15 +53,15 @@
   "apc.stylesheet": {
     ".sidebar > .composite": "height: 12px !important",
     ".title-label": "display: none !important",
-    ".title-actions": "display: none !important",
-    ".tabs-and-actions-container > .editor-actions": "display: none !important",
+    // ".title-actions": "display: none !important",
+    // ".tabs-and-actions-container > .editor-actions": "display: none !important",
     ".titlebar-center": "display: none !important",
     ".titlebar-right": "display: none !important",
     ".inline-tabs-placeholder": "display: none !important",
     ".split-view-view .visible": "background-color: #110f17 !important"
   },
 
-  // Aura theme customisation
+  // Theme customisation
   "workbench.colorCustomizations": {
     "[Aura Dark]": {
       "editor.background": "#110f17",
@@ -75,12 +72,14 @@
       "tab.inactiveBackground": "#110f17"
     },
     "[GitHub Dark Dimmed]": {
-      "editor.background": "#141218"
+      "editor.background": "#141218",
+      "terminal.background": "#141218"
     }
   },
 
   // Misc
-  "workbench.startupEditor": "none",
+  // "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
   "explorer.compactFolders": false,
   "editor.tabSize": 2,
   "editor.linkedEditing": true,
@@ -93,18 +92,30 @@
   "editor.guides.bracketPairs": true,
   // "window.zoomLevel": 0.75,
 
+  // Formatters
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  // "[python]": {
-  //     "editor.formatOnSave": true,
-  //     "editor.defaultFormatter": "ms-python.black-formatter"
-  // },
-  "workbench.sideBar.location": "right",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  // Sync Settings
   "settingsSync.ignoredExtensions": []
+
+  // Terminal Settings
   // "terminal.integrated.profiles.linux": {
   //   "bash": {
   //     "path": "bash",
