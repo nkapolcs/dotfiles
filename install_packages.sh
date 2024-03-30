@@ -93,7 +93,7 @@ else
 
     TERMINAL="fish tmux"
     BROWSERS="firefox tor-browser"
-    EDITORS="vim neovim"
+    EDITORS="vim neovim ripgrep fd-find"
     VCS="git"
     TOOLS="fzf zoxide direnv lsd stow"
     PYTHON="poetry"
@@ -126,4 +126,11 @@ if [ $? -eq 0 ]; then
     echo "! After installation of virtualfish, do:"
     echo "!   vf install"
     echo "!   vf addplugins auto_activation"
+fi
+
+ask "Want to setup fish theme?"
+if [ $? -eq 0 ]; then
+    fisher install IlanCosman/tide@v6
+    tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time='24-hour format' --rainbow_prompt_separators=Angled --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character' --prompt_connection=Disconnected --powerline_right_prompt_frame=No --prompt_spacing=Compact --icons='Few icons' --transient=Yes
+    echo "Install fonts: https://github.com/IlanCosman/tide?tab=readme-ov-file#fonts select the font in the terminal preferences"
 fi
