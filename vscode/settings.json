@@ -9,7 +9,8 @@
   // Change fonts
   "editor.fontFamily": "JetBrainsMono",
   "scm.inputFontFamily": "Geist Mono",
-  "terminal.integrated.fontFamily": "JetBrainsMono",
+  // "terminal.integrated.fontFamily": "JetBrainsMono",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
   "chat.editor.fontFamily": "Geist Mono",
   "debug.console.fontFamily": "Geist Mono",
   "editor.codeLensFontFamily": "Geist Mono",
@@ -23,6 +24,7 @@
 
   // ui
   "editor.minimap.enabled": false,
+  "editor.stickyScroll.enabled": false,
   "window.commandCenter": false,
   "editor.scrollbar.vertical": "auto",
   "window.titleBarStyle": "custom",
@@ -94,7 +96,7 @@
 
   // Formatters
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
@@ -110,6 +112,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
+  },
+  "[shellscript]": {
+    "files.trimTrailingWhitespace": false
   },
 
   // Sync Settings
