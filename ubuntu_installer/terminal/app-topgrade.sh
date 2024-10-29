@@ -11,7 +11,7 @@ config_dir="${XDG_CONFIG_HOME:-$HOME/.config}"
 mkdir -p "$config_dir"
 
 # Download example configuration file
-wget "https://raw.githubusercontent.com/topgrade-rs/topgrade/main/config.example.toml" -O "$config_dir/topgrade.toml"
+topgrade --config-reference > ~/.config/topgrade.toml
 
 # Return to original directory
 cd -
