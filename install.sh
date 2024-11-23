@@ -112,6 +112,7 @@ else
     # curl -sfL https://direnv.net/install.sh | bash
     # # Zellij
 
+    for installer in ./ubuntu_installer/terminal/*.sh; do source $installer; done
     for installer in ./ubuntu_installer/desktop/*.sh; do source $installer; done
 
 fi
