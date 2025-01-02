@@ -8,5 +8,5 @@ sudo apt install -y curl git unzip
 
 
 # Run desktop installers
-# source "$DIR/desktop/app-1password.sh"
-for installer in $DIR/desktop/*.sh; do source $installer; done
+# source "$DIR/terminal/app-fish.sh"
+for installer in $DIR/terminal/*.sh; do source $installer; done

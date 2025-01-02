@@ -14,7 +14,7 @@ languages=("Node.js" "Go" "Python" "Elixir" "Rust")
 # fi
 
 if [[ -n "$languages" ]]; then
-	for language in $languages; do
+	for language in "${languages[@]}"; do
 		case $language in
 		Ruby)
 			mise use --global ruby@3.3
