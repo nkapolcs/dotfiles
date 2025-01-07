@@ -113,7 +113,7 @@ else
     # # Zellij
 
     for installer in ./ubuntu/terminal.sh; do source $installer; done
-    # for installer in ./ubuntu/desktop.sh; do source $installer; done
+    for installer in ./ubuntu/desktop.sh; do source $installer; done
 
 fi
 echo 'Done with OS-specific setup'
