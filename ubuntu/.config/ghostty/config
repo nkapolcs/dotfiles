@@ -1,0 +1,24 @@
+theme = Monokai Pro Spectrum
+
+# Shell integration (enhanced experience with Fish)
+shell-integration = fish
+shell-integration-features = cursor,title
+
+# Window settings
+window-theme = system
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 20
+
+# Fish-friendly cursor settings
+cursor-style = bar
+cursor-style-blink = true
+cursor-click-to-move = true
+
+# Mouse settings
+mouse-hide-while-typing = true
+copy-on-select = true
+
+# Clipboard settings for easier shell interaction
+clipboard-read = allow
+clipboard-write = allow

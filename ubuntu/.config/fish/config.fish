@@ -5,45 +5,52 @@
 # VARIABLES
 
 set -gx OS (uname -s)
-set -gx DENO_INSTALL $HOME/.deno
-set -gx BUN_INSTALL $HOME/.bun
+# set -gx DENO_INSTALL $HOME/.deno
+# set -gx BUN_INSTALL $HOME/.bun
 # set -gx PNPM_HOME /Users/kkga/Library/pnpm
-set -gx FZF_DEFAULT_COMMAND 'fd --type=file'
+
+# FZF (Fuzzy Finder) configuration
+set -gx FZF_DEFAULT_COMMAND 'fd --type=file' # Uses fd for file search
 set -gx FZF_DEFAULT_OPTS '--layout=reverse --height=50% --preview-window=bottom:50%,border-top --inline-info --color=prompt:3,header:7,info:7,pointer:14:bold,marker:4,hl:4,hl+:12:,fg+:15,bg+:235'
-set -gx EDITOR hx
-set -gx VISUAL $EDITOR
-set -gx ZK_NOTEBOOK_DIR $HOME/notes
+
+# Editor settings
+set -gx EDITOR hx       # Sets Helix as default editor
+set -gx VISUAL $EDITOR  # Sets same editor for visual editing
+
+# Tool-specific settings
 set -gx BAT_THEME ansi
 set -gx BAT_STYLE plain
-if [ $OS = Linux ]
-    set -gx SSH_AUTH_SOCK "/run/user/$(id -u)/gcr/ssh"
-else if [ $OS = Darwin ]
-    set -gx LDFLAGS -L/opt/homebrew/opt/unixodbc/lib
-    set -gx CPPFLAGS -I/opt/homebrew/opt/unixodbc/include
-    set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
-    set -gx KAKOUNE_POSIX_SHELL /opt/homebrew/bin/dash
-    set -gx JAVA_HOME (/usr/libexec/java_home)
-end
+
+# set -gx ZK_NOTEBOOK_DIR $HOME/notes
+# if [ $OS = Linux ]
+#     set -gx SSH_AUTH_SOCK "/run/user/$(id -u)/gcr/ssh"
+# else if [ $OS = Darwin ]
+#     set -gx LDFLAGS -L/opt/homebrew/opt/unixodbc/lib
+#     set -gx CPPFLAGS -I/opt/homebrew/opt/unixodbc/include
+#     set -gx CPPFLAGS -I/opt/homebrew/opt/openjdk/include
+#     set -gx KAKOUNE_POSIX_SHELL /opt/homebrew/bin/dash
+#     set -gx JAVA_HOME (/usr/libexec/java_home)
+# end
 
 # PATH
 
-if [ $OS = Darwin ]
-    fish_add_path /opt/homebrew/bin
-    fish_add_path /opt/homebrew/sbin
-    fish_add_path /opt/homebrew/opt/icu4c/bin
-    fish_add_path /opt/homebrew/opt/icu4c/sbin
-    fish_add_path /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin
-    fish_add_path /usr/local/opt/openssl@1.1/bin
-    fish_add_path /opt/homebrew/opt/tcl-tk/bin
-    fish_add_path /opt/homebrew/opt/openjdk/bin
-end
-fish_add_path \
-    "$HOME/.yarn/bin" \
-    "$DENO_INSTALL/bin" \
-    "$BUN_INSTALL/bin" \
-    "$HOME/.cargo/bin" \
-    "$PNPM_HOME"
-fish_add_path -m "$HOME/.local/bin"
+# if [ $OS = Darwin ]
+#     fish_add_path /opt/homebrew/bin
+#     fish_add_path /opt/homebrew/sbin
+#     fish_add_path /opt/homebrew/opt/icu4c/bin
+#     fish_add_path /opt/homebrew/opt/icu4c/sbin
+#     fish_add_path /usr/local/opt/openjdk/libexec/openjdk.jdk/Contents/Home/bin
+#     fish_add_path /usr/local/opt/openssl@1.1/bin
+#     fish_add_path /opt/homebrew/opt/tcl-tk/bin
+#     fish_add_path /opt/homebrew/opt/openjdk/bin
+# end
+# fish_add_path \
+#     "$HOME/.yarn/bin" \
+#     "$DENO_INSTALL/bin" \
+#     "$BUN_INSTALL/bin" \
+#     "$HOME/.cargo/bin" \
+#     "$PNPM_HOME"
+# fish_add_path -m "$HOME/.local/bin"
 
 # ABBREVIATIONS
 
@@ -104,7 +111,7 @@ if status --is-interactive
     zoxide init fish --cmd j | source
     direnv hook fish | source
     atuin init fish --disable-up-arrow | source
-    fnm env --use-on-cd | source
+    # fnm env --use-on-cd | source
 end
 
 # opam configuration

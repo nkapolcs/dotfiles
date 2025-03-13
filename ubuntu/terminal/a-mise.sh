@@ -7,9 +7,9 @@ sudo apt update
 sudo apt install -y mise
 
 # Install the following programming languages
-languages=("Node.js" "Go" "Python" "Elixir" "Rust")
+languages=("Node.js" "Go" "Python" "Elixir" "Rust" "Zig")
 # else
-	# AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java")
+	# AVAILABLE_LANGUAGES=("Ruby on Rails" "Node.js" "Go" "PHP" "Python" "Elixir" "Rust" "Java" "Zig")
 	# languages=$(gum choose "${AVAILABLE_LANGUAGES[@]}" --no-limit --height 10 --header "Select programming languages")
 # fi
 
@@ -46,6 +46,10 @@ if [[ -n "$languages" ]]; then
 			;;
 		Java)
 			mise use --global java@latest
+			;;
+		Zig)
+			mise use --global zig@latest
+			mise use --global zls@latest
 			;;
 		esac
 	done

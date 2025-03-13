@@ -86,55 +86,15 @@ elif (lsb_release -a | grep 'Raspbian'); then
     sudo apt install vim tmux fish git nodejs npm python3 python3-pip
 else
     echo 'Detected Ubuntu'
-    # sudo add-apt-repository ppa:webupd8team/tor-browser
-    # sudo add-apt-repository ppa:neovim-ppa/unstable
-    # sudo add-apt-repository ppa:fish-shell/release-3
-
-
-    # TERMINAL="fish tmux"
-    # BROWSERS="firefox tor-browser"
-    # EDITORS="vim neovim ripgrep fd-find"
-    # VCS="git"
-    # TOOLS="fzf zoxide direnv lsd stow"
-    # PYTHON="poetry"
-    # # MATH="octave"
-    # # PYTHON="python-dev python3-dev python3-pip ipython3 poetry"
-    # # GPG="gnupg-curl"
-
-    # ALL="$TERMINAL $BROWSERS $EDITORS $VCS $TOOLS $PYTHON"
-
-    # sudo apt-get update
-    # sudo apt-get install $ALL
-
-    # cargo install atuin
-    # cargo install topgrade
-    # curl -fsSL https://fnm.vercel.app/install | bash
-    # curl -sfL https://direnv.net/install.sh | bash
-    # # Zellij
-
-    for installer in ./ubuntu/terminal.sh; do source $installer; done
+    # for installer in ./ubuntu/terminal.sh; do source $installer; done
     for installer in ./ubuntu/desktop.sh; do source $installer; done
-
 fi
 echo 'Done with OS-specific setup'
 echo
 
-ask "Want to user-install Python packages?"
-if [ $? -eq 0 ]; then
-    PYTHON_PACKAGES="numpy scipy pandas matplotlib powerline-status"
-    pip install --upgrade --user $PYTHON_PACKAGES
-    PYTHON_PACKAGES_DEV="virtualfish jupyterlab wheel pytest"
-    PYTHON_PACKAGES_LINT="black bandit flake8 mypy pyupgrade"
-    pip install --upgrade --user $PYTHON_PACKAGES_DEV
-
-    echo "! After installation of virtualfish, do:"
-    echo "!   vf install"
-    echo "!   vf addplugins auto_activation"
-fi
-
-ask "Want to setup fish theme?"
-if [ $? -eq 0 ]; then
-    fisher install IlanCosman/tide@v6
-    tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time='24-hour format' --rainbow_prompt_separators=Angled --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character' --prompt_connection=Disconnected --powerline_right_prompt_frame=No --prompt_spacing=Compact --icons='Few icons' --transient=Yes
-    echo "Install fonts: https://github.com/IlanCosman/tide?tab=readme-ov-file#fonts select the font in the terminal preferences"
-fi
+# ask "Want to setup fish theme?"
+# if [ $? -eq 0 ]; then
+#     fisher install IlanCosman/tide@v6
+#     tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time='24-hour format' --rainbow_prompt_separators=Angled --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character' --prompt_connection=Disconnected --powerline_right_prompt_frame=No --prompt_spacing=Compact --icons='Few icons' --transient=Yes
+#     echo "Install fonts: https://github.com/IlanCosman/tide?tab=readme-ov-file#fonts select the font in the terminal preferences"
+# fi

@@ -1,18 +1,20 @@
 #!/bin/bash
 
 # Update package lists
+sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 
 # Install Fish shell and dependencies
-sudo apt install -y fish lsd bat direnv fzf
+sudo apt install -y fish bat direnv fzf
+cargo install lsd
 
 # Get the path of the Fish binary
 FISH_PATH=$(which fish)
 
 # Add Fish to the list of allowed shells if not already present
-if ! grep -q "$FISH_PATH" /etc/shells; then
-    echo "$FISH_PATH" | tee -a /etc/shells
-fi
+# if ! grep -q "$FISH_PATH" /etc/shells; then
+#     echo "$FISH_PATH" | tee -a /etc/shells
+# fi
 
 # Get the username of the user who invoked sudo
 SUDO_USER=$(logname || who am i | awk '{print $1}')
